@@ -3,7 +3,7 @@
 namespace OSS_SNMP\MIBS\Squire\STP;
 
 /**
- * A class for performing SNMP V2 queries on Squire Signal Transfer Point, LinkSet resource
+ * A class for performing SNMP V2 queries on Squire Signal Transfer Point, LinkSet resource (SS7 MTP Level 2)
  */
 class LinkSet extends \OSS_SNMP\MIB
 {
@@ -49,7 +49,7 @@ class LinkSet extends \OSS_SNMP\MIB
 
 
     /**
-     * Returns the status of the Signaling Link
+     * Returns the status of the Link Set
      *
      * @param $resourceId
      * @return string The status of the resource
@@ -60,7 +60,7 @@ class LinkSet extends \OSS_SNMP\MIB
     }
 
     /**
-     * Returns the description of the Signaling Link
+     * Returns the description of the Link Set
      *
      * @param $resourceId
      * @return string The label of the resource
@@ -71,7 +71,7 @@ class LinkSet extends \OSS_SNMP\MIB
     }
 
     /**
-     * Returns the value of a counter of number of outbound bits on the Signaling Link
+     * Returns the value of a counter of number of outbound bits on the Link Set
      *
      * @param $resourceId
      * @return string The number of outbound bits that transited by the logical interface
@@ -82,7 +82,7 @@ class LinkSet extends \OSS_SNMP\MIB
     }
 
     /**
-     * Returns the value of a counter of number of inbound bits on the Signaling Link
+     * Returns the value of a counter of number of inbound bits on the Link Set
      *
      * @param $resourceId
      * @return string The number of inbound bits that transited by the logical interface
@@ -93,7 +93,7 @@ class LinkSet extends \OSS_SNMP\MIB
     }
 
     /**
-     * Returns the value of a counter of number of outbound Message Service Units (MSU) on the Signaling Link
+     * Returns the value of a counter of number of outbound Message Service Units (MSU) on the Link Set
      *
      * @param $resourceId
      * @return string The number of outbound Message Service Units (MSU) that transited by the logical interface
@@ -104,7 +104,7 @@ class LinkSet extends \OSS_SNMP\MIB
     }
 
     /**
-     * Returns the value of a counter of number of inbound Message Service Units (MSU) on the Signaling Link
+     * Returns the value of a counter of number of inbound Message Service Units (MSU) on the Link Set
      *
      * @param $resourceId
      * @return string The number of inbound Message Service Units (MSU) that transited by the logical interface

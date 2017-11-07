@@ -3,7 +3,7 @@
 namespace OSS_SNMP\MIBS\Squire\STP;
 
 /**
- * A class for performing SNMP V2 queries on Squire Signal Transfer Point
+ * A class for performing SNMP V2 queries on Squire Signal Transfer Point, Signalink Link resource (SS7 MTP Level 2)
  */
 class SignalingLink extends \OSS_SNMP\MIB
 {
