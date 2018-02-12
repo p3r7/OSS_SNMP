@@ -43,16 +43,15 @@ class SquireStpMibFactory
     /**
      * Magic method for generic function calls
      *
-     * @param $snmp
      * @param string $method
-     * @param null $version
+     * @param $args
      * @return \OSS_SNMP\MIB
      * @throws \Exception
      */
-    public function __call( $snmp, $method, $version = null ) {
+    public function __call($method, $args) {
 
         if( substr( $method, 0, 3 ) == 'use' )
-            return $this->useExtension($snmp, substr($method, 3), $version);
+            return $this->useExtension($this->snmp, substr($method, 3));
 
         throw new \Exception( "ERR: Unknown method requested in magic __call(): $method\n" );
     }
@@ -77,7 +76,7 @@ class SquireStpMibFactory
         if (empty($version))
             $version = $this->majorVersion;
 
-        $mib = '\\OSS_SNMP\\MIBS\\Squire\\STP\\' . 'v' . $version . str_replace( '_', '\\', $mib );
+        $mib = '\\OSS_SNMP\\MIBS\\Squire\\STP\\' . 'v' . $version . '\\' . str_replace( '_', '\\', $mib );
 
         if (! class_exists($mib))
             throw new \Exception( "ERR: Unknown MIB '$mib' for version '$version'\n" );
