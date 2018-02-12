@@ -95,13 +95,13 @@ class SquireStpMibFactory
         $hasNewerVersionOid = $this->has_newer_version_oid($snmp);
 
         if ($hasNewerVersionOid)
-            return $snmp->get(self::OID_BASE . self::OID_MAJOR_VERSION_new . '.0');
+            return $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_new . '.0');
         else
-            return $snmp->get(self::OID_BASE . self::OID_MAJOR_VERSION_old . '.0');
+            return $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_old . '.0');
     }
 
     protected function has_newer_version_oid (\OSS_SNMP\SNMP $snmp) {
-        $version = $snmp->get(self::OID_BASE . self::OID_MAJOR_VERSION_old . '.0');
+        $version = $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_old . '.0');
 
         return $version === 0;
     }
