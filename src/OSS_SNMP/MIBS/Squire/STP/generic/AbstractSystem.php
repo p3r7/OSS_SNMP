@@ -61,8 +61,6 @@ abstract class AbstractSystem extends \OSS_SNMP\MIB
 
 	const OID_DATE_FORMAT                       = '';
 
-	const OID_DESCRIPTION                       = '';
-
 	const OID_PERIODIC                          = '';
 
 	const OID_OPTIONS                           = '';
