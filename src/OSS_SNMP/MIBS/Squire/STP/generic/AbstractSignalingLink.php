@@ -71,7 +71,7 @@ abstract class AbstractSignalingLink extends \OSS_SNMP\MIB
      */
     public function status($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_STATUS . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_STATUS . '.' . $resourceId);
     }
 
     /**
@@ -82,7 +82,7 @@ abstract class AbstractSignalingLink extends \OSS_SNMP\MIB
      */
     public function description($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_DESCRIPTION . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_DESCRIPTION . '.' . $resourceId);
     }
 
     /**
@@ -93,7 +93,7 @@ abstract class AbstractSignalingLink extends \OSS_SNMP\MIB
      */
     public function txBits($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_TX_BITS_TOTAL . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_TX_BITS_TOTAL . '.' . $resourceId);
     }
 
     /**
@@ -104,7 +104,7 @@ abstract class AbstractSignalingLink extends \OSS_SNMP\MIB
      */
     public function rxBits($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_RX_BITS_TOTAL . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_RX_BITS_TOTAL . '.' . $resourceId);
     }
 
     /**
@@ -115,7 +115,7 @@ abstract class AbstractSignalingLink extends \OSS_SNMP\MIB
      */
     public function txMsu($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_TX_MSU_TOTAL . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_TX_MSU_TOTAL . '.' . $resourceId);
     }
 
     /**
@@ -126,7 +126,7 @@ abstract class AbstractSignalingLink extends \OSS_SNMP\MIB
      */
     public function rxMsu($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_RX_MSU_TOTAL . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_RX_MSU_TOTAL . '.' . $resourceId);
     }
 
 }

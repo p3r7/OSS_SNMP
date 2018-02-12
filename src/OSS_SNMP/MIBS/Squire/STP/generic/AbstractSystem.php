@@ -77,17 +77,17 @@ abstract class AbstractSystem extends \OSS_SNMP\MIB
      */
     public function status($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_STATUS . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_STATUS . '.' . $resourceId);
     }
 
     /**
-     * Returns the description of the VOIP Stack
+     * Returns the description of the SVI system
      *
      * @param $resourceId
      * @return string The label of the resource
      */
     public function description($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_DESCRIPTION . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_DESCRIPTION . '.' . $resourceId);
     }
 }

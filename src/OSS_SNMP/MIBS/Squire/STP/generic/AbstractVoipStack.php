@@ -34,7 +34,7 @@ abstract class AbstractVoipStack extends \OSS_SNMP\MIB
      */
     public function status($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_STATUS . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_STATUS . '.' . $resourceId);
     }
 
     /**
@@ -45,6 +45,6 @@ abstract class AbstractVoipStack extends \OSS_SNMP\MIB
      */
     public function description($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_DESCRIPTION . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_DESCRIPTION . '.' . $resourceId);
     }
 }

@@ -23,24 +23,24 @@ abstract class AbstractRoutingCriteria extends \OSS_SNMP\MIB
 
 
     /**
-     * Returns the status of the Hunt Group
+     * Returns the status of the Routing Criteria
      *
      * @param $resourceId
      * @return string The status of the resource
      */
     public function status($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_STATUS . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_STATUS . '.' . $resourceId);
     }
 
     /**
-     * Returns the description of the Hunt Group
+     * Returns the description of the Routing Criteria
      *
      * @param $resourceId
      * @return string The label of the resource
      */
     public function description($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_DESCRIPTION . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_DESCRIPTION . '.' . $resourceId);
     }
 }
