@@ -19,6 +19,8 @@ class Circuit extends AbstractCircuit
     const OID_TIMESLOT = '9';
     const OID_CIRCUITGROUP = '10';
 
+    const OID_CC_STATUS = '16';
+
     const OID_IN_SERVICE = '19';
     const OID_OUT_SERVICE = '20';
 

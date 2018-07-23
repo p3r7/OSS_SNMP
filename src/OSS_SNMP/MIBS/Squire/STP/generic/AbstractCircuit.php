@@ -50,7 +50,7 @@ abstract class AbstractCircuit extends \OSS_SNMP\MIB
      * @param $resourceId
      * @return string The label of the resource
      */
-    public function description($resourceId)
+    public function description ($resourceId)
     {
         return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_DESCRIPTION . '.' . $resourceId);
     }
@@ -61,9 +61,22 @@ abstract class AbstractCircuit extends \OSS_SNMP\MIB
      * @param $resourceId
      * @return string The label of the resource
      */
-    public function cic($resourceId)
+    public function cic ($resourceId)
     {
         return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_CIC . '.' . $resourceId);
     }
 
+    public function used ($resourceId)
+    {
+        /**
+         * Returns whether the Circuit resource is used or not
+         *
+         * @param $resourceId
+         * @return string The label of the resource
+         */
+
+        $ccStatus = $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_CC_STATUS . '.' . $resourceId);
+
+        return ($ccStatus !== 'CC_IDLE');
+    }
 }

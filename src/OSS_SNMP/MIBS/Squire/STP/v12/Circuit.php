@@ -22,6 +22,8 @@ class Circuit extends AbstractCircuit
 
     const OID_CIRCUITGROUP = '11';
 
+    const OID_CC_STATUS = '18';
+
     const OID_IN_SERVICE = '21';
     const OID_OUT_SERVICE = '22';
 
