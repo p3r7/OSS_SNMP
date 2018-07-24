@@ -6,7 +6,7 @@ use OSS_SNMP\MIBS\Squire\STP\generic\AbstractApplicationServicePart;
 
 class ApplicationServicePart extends AbstractApplicationServicePart
 {
-    const OID_BASE = '1.3.6.1.2.1.2.2.34';
+    const OID_BASE = '.1.3.6.1.2.1.2.2.34';
 
     const OID_STATUS = '0';
     const OID_DESCRIPTION = '26';

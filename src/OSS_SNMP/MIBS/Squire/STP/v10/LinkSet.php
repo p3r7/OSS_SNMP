@@ -6,7 +6,7 @@ use OSS_SNMP\MIBS\Squire\STP\generic\AbstractLinkSet;
 
 class LinkSet extends AbstractLinkSet
 {
-    const OID_BASE                              = '1.3.6.1.2.1.2.2.8';
+    const OID_BASE                              = '.1.3.6.1.2.1.2.2.8';
 
     const OID_STATUS                            = '0';
     const OID_FLAGS                             = '1';

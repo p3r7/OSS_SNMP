@@ -6,7 +6,7 @@ use OSS_SNMP\MIBS\Squire\STP\generic\AbstractSystem;
 
 class System extends AbstractSystem
 {
-    const OID_BASE                              = '1.3.6.1.2.1.2.2.14';
+    const OID_BASE                              = '.1.3.6.1.2.1.2.2.14';
 
     const OID_STATUS                            = '0';
     const OID_FLAGS                             = '1';

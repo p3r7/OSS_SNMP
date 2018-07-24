@@ -7,7 +7,7 @@ use OSS_SNMP\MIBS\Squire\STP\generic\AbstractHuntGroup;
 class HuntGroup extends AbstractHuntGroup
 {
 
-    const OID_BASE                              = '1.3.6.1.2.1.2.2.17';
+    const OID_BASE                              = '.1.3.6.1.2.1.2.2.17';
 
     const OID_STATUS                            = '0';
     const OID_TYPE                              = '1';

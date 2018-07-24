@@ -7,7 +7,7 @@ use OSS_SNMP\MIBS\Squire\STP\generic\AbstractSctp;
 class Sctp extends AbstractSctp
 {
 
-	const OID_BASE                              = '1.3.6.1.2.1.2.2.33';
+	const OID_BASE                              = '.1.3.6.1.2.1.2.2.33';
 
 	const OID_STATUS                            = '0';
 	const OID_FLAGS                             = '1';
