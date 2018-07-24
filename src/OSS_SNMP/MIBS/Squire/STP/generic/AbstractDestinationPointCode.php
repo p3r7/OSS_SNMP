@@ -40,7 +40,7 @@ abstract class AbstractDestinationPointCode extends \OSS_SNMP\MIB
      */
     public function status($resourceId)
     {
-        return $this->getSNMP()->get(self::OID_BASE . '.' . self::OID_STATUS . '.' . $resourceId);
+        return $this->getSNMP()->get(static::OID_BASE . '.' . static::OID_STATUS . '.' . $resourceId);
     }
 
     /**
