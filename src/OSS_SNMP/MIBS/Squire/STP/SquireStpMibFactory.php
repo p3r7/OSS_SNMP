@@ -65,21 +65,21 @@ class SquireStpMibFactory
      *
      * See the examples for more information.
      *
-     * @param $snmp
+     * @param \OSS_SNMP\SNMP $snmp
      * @param string $mib The extension class to use
      * @param null $version
      * @return \OSS_SNMP\MIB
      * @throws \Exception
      */
-    public function useExtension ($snmp, $mib, $version = null) {
+    public function useExtension (\OSS_SNMP\SNMP $snmp, $mib, $version = null) {
 
         if (empty($version))
             $version = $this->majorVersion;
 
         $mib = '\\OSS_SNMP\\MIBS\\Squire\\STP\\' . 'v' . $version . '\\' . str_replace( '_', '\\', $mib );
 
-        if (! class_exists($mib))
-            throw new \Exception( "ERR: Unknown MIB '$mib' for version '$version'\n" );
+        if (! in_array($version, ['8', '10', '12']))
+            throw new \Exception( "ERR: Version '$version' is not supported, gotten for " . $snmp->getHost() . ".\n" );
 
         /* @var \OSS_SNMP\MIB $m */
         $m = new $mib();
@@ -91,13 +91,22 @@ class SquireStpMibFactory
     // -------------------------------------------------------------------
     // AUTO VERSION DETECTION
 
+    /**
+     * @param \OSS_SNMP\SNMP $snmp
+     * @return mixed
+     * @throws \Exception
+     */
     public function getMajorVersion (\OSS_SNMP\SNMP $snmp) {
         $hasNewerVersionOid = $this->has_newer_version_oid($snmp);
 
-        if ($hasNewerVersionOid)
-            return $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_new . '.0');
-        else
-            return $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_old . '.0');
+        try {
+            if ($hasNewerVersionOid)
+                return $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_new . '.0');
+            else
+                return $snmp->get(self::OID_BASE . '.' . self::OID_MAJOR_VERSION_old . '.0');
+        } catch (\OSS_SNMP\Exception $e) {
+            throw new \Exception( "ERR: Could not retrieve version for " . $snmp->getHost() . ".\n" );
+        }
     }
 
     protected function has_newer_version_oid (\OSS_SNMP\SNMP $snmp) {
